@@ -24,4 +24,8 @@ public class Vertex {
         adj             = new LinkedList<Edge>();
     }
 
+    public void addEdge(Vertex hypernym) {
+        adj.add(new Edge(hypernym, 1));
+    }
+
 }
