@@ -6,17 +6,15 @@ package digraph;
  */
 public class Edge {
 
-    public Vertex   dest;   // Edge to hypernym Vertex
-    public int      cost;   // Traverse cost to hypernym Vertex
+    public Vertex   destination;    // Edge to hypernym Vertex
 
     /**
      * Constructs a new Edge betwee two vertices.
-     * @param dest - destination edge is a hypernym.
+     * @param destination - destination edge is a hypernym.
      * @param cost - traverse cost.
      */
-    public Edge(Vertex dest, int cost) {
-        this.dest = dest;
-        this.cost = cost;
+    public Edge(Vertex destination, int cost) {
+        this.destination = destination;
     }
 
 }

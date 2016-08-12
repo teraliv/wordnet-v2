@@ -1,0 +1,12 @@
+0,noun0,desc0
+1,noun1,desc1
+2,noun2,desc2
+3,noun3,desc3
+4,noun4,desc4
+5,noun5,desc5
+7,noun7,desc7
+8,noun8,desc8
+9,noun9,desc9
+10,noun10,desc10
+11,noun11,desc11
+12,noun12,desc12

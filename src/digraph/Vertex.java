@@ -5,7 +5,8 @@ import java.util.List;
 
 public class Vertex {
 
-    public int          synset_id;      // ID of current synset
+    public int          id;             // ID of current synset
+    public int          cost;           // Traverse cost to destination Vertex
     public String       synonym;        // The synonym
     public String       definition;     // Dictionary definition
     public List<Edge>   adj;            // A list of adjacent vertices (hypernyms of this vertex)
@@ -18,10 +19,11 @@ public class Vertex {
      * @param definition - dictionary definition.
      */
     public Vertex(int id, String synonym, String definition) {
-        this.synset_id  = id;
+        this.id         = id;
+        this.cost       = 0;
         this.synonym    = synonym;
         this.definition = definition;
-        adj             = new LinkedList<Edge>();
+        this.adj        = new LinkedList<>();
     }
 
     public void addEdge(Vertex hypernym) {

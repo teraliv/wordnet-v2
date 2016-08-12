@@ -1,6 +1,5 @@
 package digraph;
 
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.HashMap;
@@ -10,15 +9,16 @@ import java.util.StringTokenizer;
 
 public class Digraph {
 
-    private Map<Integer, Vertex> vertexMap;
-    private String synsets;
-    private String hypernyms;
+    private Map<Integer, Vertex>    vertexMap;
+    private String                  synsets;
+    private String                  hypernyms;
 
 
     public Digraph(String synsets, String hypernyms) {
         this.synsets    = synsets;
         this.hypernyms  = hypernyms;
         this.vertexMap  = new HashMap<>();
+
         readSynsets();
         readHypernyms();
     }
@@ -56,7 +56,7 @@ public class Digraph {
         Scanner fileScanner = null;
 
         try {
-            fileScanner = new Scanner(new FileInputStream("hypernyms.txt"));
+            fileScanner = new Scanner(new FileInputStream(hypernyms));
             String line = null;
 
             while (fileScanner.hasNextLine()) {
@@ -104,16 +104,26 @@ public class Digraph {
     }
 
 
+    /**
+     * A method to get a all vertices.
+     *
+     * @return - HashMap of Vertices.
+     */
+    public Map<Integer, Vertex> getVertexMap() {
+        return vertexMap;
+    }
+
+
+    public Vertex getVertex(int v) {
+        return vertexMap.get(v);
+    }
+
+
     public void printVertexMap() {
-        //for (Vertex v : vertexMap.values()) {
-        //    System.out.println(v.synset_id);
-        //    System.out.println(v.synonym);
-        //    System.out.println(v.definition);
-        //}
-
-        Vertex v = vertexMap.get(592);
-
-        System.out.println(v.adj.size());
-        System.out.println(v.adj.get(5).dest.synset_id);
+        for (Vertex v : vertexMap.values()) {
+            System.out.println(v.id);
+            System.out.println(v.synonym);
+            System.out.println(v.definition);
+        }
     }
 }
